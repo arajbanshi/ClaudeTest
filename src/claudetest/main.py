@@ -13,6 +13,7 @@ class ChatResponse(BaseModel):
     reply: str
 
 
+@app.post("/chat", response_model=ChatResponse)
 async def chat(request: ChatRequest) -> ChatResponse:
     reply = await run_prompt(request.prompt)
     return ChatResponse(reply=reply)

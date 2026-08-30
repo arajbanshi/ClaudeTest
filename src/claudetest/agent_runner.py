@@ -14,7 +14,7 @@ async def run_prompt(prompt: str) -> str:
     reply_parts: list[str]=[]
     async for message in query(prompt=prompt, options=options):
         if isinstance(message, AssistantMessage):
-            for block in message.blocks:
+            for block in message.content:
                 if isinstance(block, TextBlock):
                     reply_parts.append(block.text)
 
