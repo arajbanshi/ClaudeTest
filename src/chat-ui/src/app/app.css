@@ -1,0 +1,16 @@
+.chat-shell {
+  height: 100dvh;
+  display: flex;
+  flex-direction: column;
+  max-width: 720px;
+  margin: 0 auto;
+  font-family: system-ui, sans-serif;
+}
+
+.error-banner {
+  flex: 0 0 auto;
+  padding: 0.5rem 1rem;
+  background: #fee2e2;
+  color: #991b1b;
+  font-size: 0.9rem;
+}

@@ -1,0 +1,12 @@
+<div class="message-list" #scrollContainer>
+  @for (message of messages(); track message.id) {
+    <div class="bubble" [class.bubble--user]="message.role === 'user'" [class.bubble--assistant]="message.role === 'assistant'">
+      {{ message.text }}
+    </div>
+  }
+  @if (isStreaming()) {
+    <div class="bubble bubble--assistant bubble--streaming">
+      {{ currentReply() }}<span class="cursor"></span>
+    </div>
+  }
+</div>
